@@ -14,11 +14,11 @@
     {% for e in equipos %}
       <tr>
         <td>{{ e.id }}</td>
-        <td>{{ e.recurso }}</td>
-        <td>{{ e.categoria }}</td>
+        <td>{{ e.nombre }}</td>
+        <td>{{ e.tipo }}</td>
         <td>{{ e.marca }}</td>
-        <td>{{ e.serie }}</td>
-        <td>{{ e.area }}</td>
+        <td>{{ e.numero_serie }}</td>
+        <td>{{ e.ubicacion }}</td>
         <td><span class="estado {{ e.estado.split(' ')[0] }}">{{ e.estado }}</span></td>
         <td class="acciones">
           <a class="btn chico sec" href="{{ url_for('editar', id_equipo=e.id) }}">Editar</a>
