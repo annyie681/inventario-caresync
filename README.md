@@ -9,15 +9,15 @@ Aplicación web para el registro, consulta y control de camas de hospitalizació
 * **`db` (`inventario-db-1`):** Base de datos MySQL `8.4` con almacenamiento persistente y verificación de estado (*healthcheck*).
 * **Red interna:** Red aislada en Docker para la comunicación privada entre `nginx`, `app` y `db`.
 
-## Requisitos Previos
+## Estructura del Proyecto
 
-* **Git**
-* **Docker** y **Docker Compose**
-* Puerto `80` disponible en el equipo o servidor
-
-## Pasos para Recrear el Sistema
-
-### 1. Clonar el repositorio
-```bash
-git clone [https://github.com/annyie681/inventario-caresync.git](https://github.com/annyie681/inventario-caresync.git)
-cd inventario-caresync
+```text
+inventario-caresync/
+├── app/              # Código fuente de la aplicación Flask y Dockerfile
+├── db/               # Scripts de inicialización de MySQL
+├── nginx/            # Configuración del proxy inverso
+├── .env.example      # Plantilla de variables de entorno (sin contraseñas reales)
+├── .gitignore        # Archivos excluidos del repositorio (incluye .env)
+├── compose.yaml      # Orquestación de contenedores con Docker Compose
+├── Jenkinsfile       # Pipeline de integración continua
+└── README.md         # Documentación del proyecto
