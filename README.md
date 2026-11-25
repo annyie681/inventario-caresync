@@ -4,9 +4,9 @@ Aplicación web para el registro, consulta y control de camas de hospitalizació
 
 ## Arquitectura del Sistema
 
-* **`nginx` (`inventario-nginx-1`):** Proxy inverso que recibe las peticiones HTTP en el puerto `80` y las redirige al servidor de la aplicación.
-* **`app` (`inventario-app-1`):** Backend en Python/Flask que gestiona la lógica de inventario y las vistas HTML.
-* **`db` (`inventario-db-1`):** Base de datos MySQL `8.4` con almacenamiento persistente en el volumen `db_data` y verificación de estado (*healthcheck*).
+* **`nginx` (`inventario-nginx-1`):** Proxy inverso que recibe las peticiones HTTP en el puerto `80` y las redirige a la aplicación.
+* **`app` (`inventario-app-1`):** Backend en Python/Flask que gestiona la lógica de inventario y las vistas web.
+* **`db` (`inventario-db-1`):** Base de datos MySQL `8.4` con almacenamiento persistente y verificación de estado (*healthcheck*).
 * **Red interna:** Red aislada en Docker para la comunicación privada entre `nginx`, `app` y `db`.
 
 ## Requisitos Previos
